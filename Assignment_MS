@@ -1,0 +1,26 @@
+Qeastion 1 >> Replica Set:: In replica set spcific no of pods running in the cluster at any time even if we delete the pod it will recreate. 
+							In daemon set it will ensure that pod is presant in all the NODE. If you add the node it will create the POD. 
+							Use Case : Log collection of each NODE
+
+
+
+Qeastion 2>>  Deployment :: Need to update the image of deployment 
+														kubectl set image deployment kubia nodejs=luksa/kubia:v1	
+														kubectl patch deployment kubia -p '{"spec": {"minReadySeconds": 10}}'
+							
+						
+Qeastion 3>>  Service	 ::	We need to check the all parameter of the YAML file of the replica set like node port,service IP,target port etc.
+							
+			
+Qeastion 4>> VOTING APP -DEMO practical	::  
+
+			Observation after deleting Voter POD : New Vote pod created immediately with different container ID, No any other difference observed, Still able to Vote
+			Observation after deleting Worker POD :New worker pod created immediately with different container ID
+			Observation after deleting db POD : New DB POD created but result are not updated in result app
+																					To resolve the issue we need to delete the result POD &  New result app pod need to create &	need to attach with db.
+			
+		
+
+		
+			
+		
